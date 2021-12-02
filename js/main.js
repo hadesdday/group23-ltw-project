@@ -184,7 +184,7 @@ Note: main.js, All Default Scripting Languages For This Theme Included In This F
   $.scrollUp({
     scrollText: '<i class="fa fa-angle-double-up"></i>',
     easingType: "linear",
-    scrollSpeed: 500,
+    scrollSpeed: 300,
   });
   /*----------------------------------------*/
   /* 11. Category Menu
