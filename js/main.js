@@ -38,7 +38,7 @@ Note: main.js, All Default Scripting Languages For This Theme Included In This F
 
 -----------------------------------------------------------------------------------*/
 (function ($) {
-  "use Strict";
+  ("use Strict");
   /*----------------------------------------*/
   /* 	01. Li's Meanmenu
 /*----------------------------------------*/
@@ -771,165 +771,244 @@ Note: main.js, All Default Scripting Languages For This Theme Included In This F
     });
   });
 
-//add cart
+  //change-password validate
+  $(() => {
+    var oldPasswordValid = false;
+    var newPasswordValid = false;
+    var confirmNewPasswordValid = false;
+
+    $("#old__password").on("input", () => {
+      var oldPassword = $("#old__password").val();
+      const passwordRegex =
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/;
+
+      if (oldPassword.length < 1 || !passwordRegex.test(oldPassword)) {
+        oldPasswordValid = false;
+        $("#old__password").addClass("error");
+        $(".error__label").first().addClass("show");
+      } else {
+        oldPasswordValid = true;
+        $("#old__password").removeClass("error");
+        $(".error__label").first().removeClass("show");
+      }
+
+      if (oldPasswordValid && newPasswordValid && confirmNewPasswordValid) {
+        $(".change-password-button").removeAttr("disabled");
+      } else {
+        $(".change-password-button").attr("disabled", "disabled");
+      }
+    });
+
+    $("#new__password").on("input", () => {
+      var newPassword = $("#new__password").val();
+      const passwordRegex =
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/;
+
+      if (newPassword.length < 1 || !passwordRegex.test(newPassword)) {
+        newPasswordValid = false;
+        $("#new__password").addClass("error");
+        $(".error__label").eq(1).addClass("show");
+      } else {
+        newPasswordValid = true;
+        $("#new__password").removeClass("error");
+        $(".error__label").eq(1).removeClass("show");
+      }
+      if (oldPasswordValid && newPasswordValid && confirmNewPasswordValid) {
+        $(".change-password-button").removeAttr("disabled");
+      } else {
+        $(".change-password-button").attr("disabled", "disabled");
+      }
+    });
+
+    $("#npassword__confirm").on("input", () => {
+      var newPassword = $("#new__password").val();
+      var confirmNewPassword = $("#npassword__confirm").val();
+
+      if (newPassword !== confirmNewPassword) {
+        confirmNewPasswordValid = false;
+        $("#npassword__confirm").addClass("error");
+        $(".error__label").last().addClass("show");
+      } else {
+        confirmNewPasswordValid = true;
+        $("#npassword__confirm").removeClass("error");
+        $(".error__label").last().removeClass("show");
+      }
+
+      if (oldPasswordValid && newPasswordValid && confirmNewPasswordValid) {
+        $(".change-password-button").removeAttr("disabled");
+      } else {
+        $(".change-password-button").attr("disabled", "disabled");
+      }
+    });
+  });
+
+  //add cart
 
   cartName = "cart";
   total = "total";
   storage1 = sessionStorage;
-  if( sessionStorage.getItem( this.cartName ) == null ) {
-
+  if (sessionStorage.getItem(this.cartName) == null) {
     var cart = {};
     cart.items = [];
 
-    sessionStorage.setItem( this.cartName, _toJSONString( cart ) );
-    sessionStorage.setItem( this.total, "0" );
+    sessionStorage.setItem(this.cartName, _toJSONString(cart));
+    sessionStorage.setItem(this.total, "0");
   }
-  function _addToCart( values ) {
-    var cart =sessionStorage.getItem( this.cartName );
+  function _addToCart(values) {
+    var cart = sessionStorage.getItem(this.cartName);
 
-    var cartObject = _toJSONObject( cart );
+    var cartObject = _toJSONObject(cart);
     var cartCopy = cartObject;
     var items = cartCopy.items;
-    items.push( values );
+    items.push(values);
 
-    sessionStorage.setItem( this.cartName, _toJSONString( cartCopy ) );
+    sessionStorage.setItem(this.cartName, _toJSONString(cartCopy));
   }
 
-  function _toJSONObject( str ) {
-    var obj = JSON.parse( str );
+  function _toJSONObject(str) {
+    var obj = JSON.parse(str);
     return obj;
   }
-  function _toJSONString( obj ) {
-    var str = JSON.stringify( obj );
+  function _toJSONString(obj) {
+    var str = JSON.stringify(obj);
     return str;
   }
   /*----------------------------------------*/
   /* 27. add to cart
 /*----------------------------------------*/
   $(".add-cart").on("click", function () {
-    var info = $(this).closest('.single-product-wrap');
+    var info = $(this).closest(".single-product-wrap");
     var itemName = info.find(".product_name").text();
     var itemPrice = info.find(".new-price").text();
-    var itemImageLink = info.find(".product-image").children('a').children('img').attr('src');
+    var itemImageLink = info
+      .find(".product-image")
+      .children("a")
+      .children("img")
+      .attr("src");
     // alert(itemImageLink)
-    var string =
-        ['<li>',
-          ' <a href="single-product.html" class="minicart-product-image">',
-          '<img src="' + itemImageLink + '" alt="cart products">',
-          '</a>',
-          '<div class="minicart-product-details">',
-          '<h6><a href="single-product.html">' + itemName + '</a></h6>',
-          '<span class="price">' + itemPrice + '</span><span>VND x</span><span class="quantity">'+1+'</span>',
-          '</div>',
-          '<button class="close" title="Remove">',
-          '<i class="fa fa-close"></i>',
-          '</button>',
-          '</li>',
-
-        ].join("\n");
+    var string = [
+      "<li>",
+      ' <a href="single-product.html" class="minicart-product-image">',
+      '<img src="' + itemImageLink + '" alt="cart products">',
+      "</a>",
+      '<div class="minicart-product-details">',
+      '<h6><a href="single-product.html">' + itemName + "</a></h6>",
+      '<span class="price">' +
+        itemPrice +
+        '</span><span>VND x</span><span class="quantity">' +
+        1 +
+        "</span>",
+      "</div>",
+      '<button class="close" title="Remove">',
+      '<i class="fa fa-close"></i>',
+      "</button>",
+      "</li>",
+    ].join("\n");
     $("ul.minicart-product-list").append(string);
     _addToCart({
-      product:itemName,
-      price:itemPrice,
-      quantity:1,
-      image:itemImageLink
+      product: itemName,
+      price: itemPrice,
+      quantity: 1,
+      image: itemImageLink,
     });
     // $('.minicart-total span').text(updateTotals()+" VND");
     // $('.hm-minicart-trigger span.item-text').text(updateTotals()+" VND");
-    updateTotals()
+    updateTotals();
   });
 
-  cart = _toJSONObject( sessionStorage.getItem( this.cartName ));
+  cart = _toJSONObject(sessionStorage.getItem(this.cartName));
   var items = cart.items;
-  for( var i = 0; i < items.length; ++i ) {
+  for (var i = 0; i < items.length; ++i) {
     var item = items[i];
     var product = item.product;
-    var price =  item.price;
+    var price = item.price;
     var quantity = item.quantity;
-    var image=item.image;
+    var image = item.image;
 
-    var string2=
-        ['<tr>',
-          '<td class="li-product-remove"><a href="#"><i class="fa fa-times"></i></a></td>',
-          '<td class="li-product-thumbnail"><a href="#"><img src="'+image+'" alt="Li\'s Product Image"></a></td>',
-          '<td class="li-product-name"><a href="#">'+product+'</a></td>',
-          '<td class="li-product-price"><span class="amount">'+ price+'</span></td>',
-          '<td class="quantity">\n' +
-          '<label>Số lượng</label>\n' +
-          '<div class="cart-plus-minus">\n' +
-          '<input class="cart-plus-minus-box" value="'+quantity+'" type="text">\n' +
-          '<div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>\n' +
-          '<div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>\n' +
-          '</div>\n' +
-          '</td>',
-          '<td class="product-subtotal"><span class="amount">$70.00</span></td>',
-          '</tr>',
-        ].join('\n');
-    $(document).find('.cart-table').append(string2);
+    var string2 = [
+      "<tr>",
+      '<td class="li-product-remove"><a href="#"><i class="fa fa-times"></i></a></td>',
+      '<td class="li-product-thumbnail"><a href="#"><img src="' +
+        image +
+        '" alt="Li\'s Product Image"></a></td>',
+      '<td class="li-product-name"><a href="#">' + product + "</a></td>",
+      '<td class="li-product-price"><span class="amount">' +
+        price +
+        "</span></td>",
+      '<td class="quantity">\n' +
+        "<label>Số lượng</label>\n" +
+        '<div class="cart-plus-minus">\n' +
+        '<input class="cart-plus-minus-box" value="' +
+        quantity +
+        '" type="text">\n' +
+        '<div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>\n' +
+        '<div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>\n' +
+        "</div>\n" +
+        "</td>",
+      '<td class="product-subtotal"><span class="amount">$70.00</span></td>',
+      "</tr>",
+    ].join("\n");
+    $(document).find(".cart-table").append(string2);
   }
   /*----------------------------------------*/
   /* 28. remove from small cart
 /*----------------------------------------*/
-  $(document).on('click', 'button.close', function () {
-    var line=$(this).closest('li');
-    var name=line.find('h6').children().text();
+  $(document).on("click", "button.close", function () {
+    var line = $(this).closest("li");
+    var name = line.find("h6").children().text();
     line.remove();
-    var cart = _toJSONObject( sessionStorage.getItem( this.cartName ) );
+    var cart = _toJSONObject(sessionStorage.getItem(this.cartName));
     var items = cart.items;
 
-    for( var i = 0; i < items.length; ++i ) {
+    for (var i = 0; i < items.length; ++i) {
       var item = items[i];
       var product = item.product;
-      if( product == name ) {
-        items.splice( i, 1 );
+      if (product == name) {
+        items.splice(i, 1);
       }
     }
 
-    updateTotals()
+    updateTotals();
   });
 
-  $(document).on('click', 'td.li-product-remove', function () {
-    var line=$(this).parent();
-    var name=line.find('.li-product-name').children().text();
+  $(document).on("click", "td.li-product-remove", function () {
+    var line = $(this).parent();
+    var name = line.find(".li-product-name").children().text();
 
-
-    var cart = _toJSONObject( sessionStorage.getItem(this.cartName));
+    var cart = _toJSONObject(sessionStorage.getItem(this.cartName));
     var items = cart.items;
-    for( var i = 0; i < items.length; ++i ) {
+    for (var i = 0; i < items.length; ++i) {
       var item = items[i];
       var product = item.product;
 
-      if( product == name ) {
-        items.splice( i, 1 );
-        alert('asdsadadsad');
+      if (product == name) {
+        items.splice(i, 1);
+        alert("asdsadadsad");
       }
     }
     line.remove();
 
-    updateTotals()
+    updateTotals();
   });
-
 
   function updateTotals() {
     var totalCount = 0;
     var totalPrices = 0;
     var itemCount = 0;
-    $('ul.minicart-product-list li').each(function (i, val) {
+    $("ul.minicart-product-list li").each(function (i, val) {
       var item = $(val);
-      var itemquantity = parseInt(item.find('.quantity').text());
+      var itemquantity = parseInt(item.find(".quantity").text());
       totalCount += itemquantity;
       totalPrices += getTotalItemPrice(item, itemquantity);
       itemCount += 1;
     });
-    $('.minicart-total span').text(totalPrices + " VND");
-    $('.hm-minicart-trigger span.item-text').text(totalPrices + " VND");
-    $('.hm-minicart-trigger span.cart-item-count').text(itemCount);
+    $(".minicart-total span").text(totalPrices + " VND");
+    $(".hm-minicart-trigger span.item-text").text(totalPrices + " VND");
+    $(".hm-minicart-trigger span.cart-item-count").text(itemCount);
   }
 
   function getTotalItemPrice(item, itemquantity) {
-    var price = parseInt(item.find('.price').text());
+    var price = parseInt(item.find(".price").text());
     return price * itemquantity;
   }
-
-
 })(jQuery);
