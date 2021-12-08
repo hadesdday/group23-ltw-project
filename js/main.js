@@ -38,7 +38,7 @@ Note: main.js, All Default Scripting Languages For This Theme Included In This F
 
 -----------------------------------------------------------------------------------*/
 (function ($) {
-  "use Strict";
+  ("use Strict");
   /*----------------------------------------*/
   /* 	01. Li's Meanmenu
 /*----------------------------------------*/
@@ -770,8 +770,79 @@ Note: main.js, All Default Scripting Languages For This Theme Included In This F
       }
     });
   });
+  
+  //change-password validate
+  $(() => {
+    var oldPasswordValid = false;
+    var newPasswordValid = false;
+    var confirmNewPasswordValid = false;
 
-//add cart
+    $("#old__password").on("input", () => {
+      var oldPassword = $("#old__password").val();
+      const passwordRegex =
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/;
+
+      if (oldPassword.length < 1 || !passwordRegex.test(oldPassword)) {
+        oldPasswordValid = false;
+        $("#old__password").addClass("error");
+        $(".error__label").first().addClass("show");
+      } else {
+        oldPasswordValid = true;
+        $("#old__password").removeClass("error");
+        $(".error__label").first().removeClass("show");
+      }
+
+      if (oldPasswordValid && newPasswordValid && confirmNewPasswordValid) {
+        $(".change-password-button").removeAttr("disabled");
+      } else {
+        $(".change-password-button").attr("disabled", "disabled");
+      }
+    });
+
+    $("#new__password").on("input", () => {
+      var newPassword = $("#new__password").val();
+      const passwordRegex =
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/;
+
+      if (newPassword.length < 1 || !passwordRegex.test(newPassword)) {
+        newPasswordValid = false;
+        $("#new__password").addClass("error");
+        $(".error__label").eq(1).addClass("show");
+      } else {
+        newPasswordValid = true;
+        $("#new__password").removeClass("error");
+        $(".error__label").eq(1).removeClass("show");
+      }
+      if (oldPasswordValid && newPasswordValid && confirmNewPasswordValid) {
+        $(".change-password-button").removeAttr("disabled");
+      } else {
+        $(".change-password-button").attr("disabled", "disabled");
+      }
+    });
+
+    $("#npassword__confirm").on("input", () => {
+      var newPassword = $("#new__password").val();
+      var confirmNewPassword = $("#npassword__confirm").val();
+
+      if (newPassword !== confirmNewPassword) {
+        confirmNewPasswordValid = false;
+        $("#npassword__confirm").addClass("error");
+        $(".error__label").last().addClass("show");
+      } else {
+        confirmNewPasswordValid = true;
+        $("#npassword__confirm").removeClass("error");
+        $(".error__label").last().removeClass("show");
+      }
+
+      if (oldPasswordValid && newPasswordValid && confirmNewPasswordValid) {
+        $(".change-password-button").removeAttr("disabled");
+      } else {
+        $(".change-password-button").attr("disabled", "disabled");
+      }
+    });
+  });
+
+ //add cart
   cartName = "cart";
   total = "total";
   storage1 = sessionStorage;
@@ -958,7 +1029,4 @@ Note: main.js, All Default Scripting Languages For This Theme Included In This F
     var price = parseInt(item.find('.price').text());
     return price * itemquantity;
   }
-
-
-
 })(jQuery);
