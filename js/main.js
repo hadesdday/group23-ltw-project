@@ -770,7 +770,7 @@ Note: main.js, All Default Scripting Languages For This Theme Included In This F
       }
     });
   });
-
+  
   //change-password validate
   $(() => {
     var oldPasswordValid = false;
@@ -842,173 +842,191 @@ Note: main.js, All Default Scripting Languages For This Theme Included In This F
     });
   });
 
-  //add cart
-
+ //add cart
   cartName = "cart";
   total = "total";
   storage1 = sessionStorage;
-  if (sessionStorage.getItem(this.cartName) == null) {
+  if( storage1.getItem( cartName ) == null ) {
+
     var cart = {};
     cart.items = [];
 
-    sessionStorage.setItem(this.cartName, _toJSONString(cart));
-    sessionStorage.setItem(this.total, "0");
+    storage1.setItem( cartName, _toJSONString( cart ) );
+    storage1.setItem( total, "0" );
   }
-  function _addToCart(values) {
-    var cart = sessionStorage.getItem(this.cartName);
 
-    var cartObject = _toJSONObject(cart);
+  function _addToCart( values ) {
+    var cartObject = _toJSONObject( storage1.getItem( cartName ));
     var cartCopy = cartObject;
     var items = cartCopy.items;
-    items.push(values);
+    items.push( values );
 
-    sessionStorage.setItem(this.cartName, _toJSONString(cartCopy));
+    storage1.setItem( cartName, _toJSONString( cartCopy ) );
   }
 
-  function _toJSONObject(str) {
-    var obj = JSON.parse(str);
+  function _toJSONObject( str ) {
+    var obj = JSON.parse( str );
     return obj;
   }
-  function _toJSONString(obj) {
-    var str = JSON.stringify(obj);
+  function _toJSONString( obj ) {
+    var str = JSON.stringify( obj );
+    return str;
+  }
+  function _convertNumber( n ) {
+    var str = n.toString();
     return str;
   }
   /*----------------------------------------*/
   /* 27. add to cart
 /*----------------------------------------*/
-  $(".add-cart").on("click", function () {
-    var info = $(this).closest(".single-product-wrap");
-    var itemName = info.find(".product_name").text();
-    var itemPrice = info.find(".new-price").text();
-    var itemImageLink = info
-      .find(".product-image")
-      .children("a")
-      .children("img")
-      .attr("src");
-    // alert(itemImageLink)
-    var string = [
-      "<li>",
-      ' <a href="single-product.html" class="minicart-product-image">',
-      '<img src="' + itemImageLink + '" alt="cart products">',
-      "</a>",
-      '<div class="minicart-product-details">',
-      '<h6><a href="single-product.html">' + itemName + "</a></h6>",
-      '<span class="price">' +
-        itemPrice +
-        '</span><span>VND x</span><span class="quantity">' +
-        1 +
-        "</span>",
-      "</div>",
-      '<button class="close" title="Remove">',
-      '<i class="fa fa-close"></i>',
-      "</button>",
-      "</li>",
-    ].join("\n");
-    $("ul.minicart-product-list").append(string);
-    _addToCart({
-      product: itemName,
-      price: itemPrice,
-      quantity: 1,
-      image: itemImageLink,
-    });
-    // $('.minicart-total span').text(updateTotals()+" VND");
-    // $('.hm-minicart-trigger span.item-text').text(updateTotals()+" VND");
-    updateTotals();
-  });
-
-  cart = _toJSONObject(sessionStorage.getItem(this.cartName));
+  var cart = _toJSONObject(storage1.getItem(cartName));
   var items = cart.items;
+  var sum=0;
   for (var i = 0; i < items.length; ++i) {
     var item = items[i];
     var product = item.product;
     var price = item.price;
     var quantity = item.quantity;
     var image = item.image;
+    var sumPrice=price*quantity;
+    var string2 =
+        ['<tr>',
+          '<td class="li-product-remove"><a href="#"><i class="fa fa-times"></i></a></td>',
+          '<td class="li-product-thumbnail"><a href="#"><img src="' + image + '" alt="Li\'s Product Image"></a></td>',
+          '<td class="li-product-name"><a href="#">' + product + '</a></td>',
+          '<td class="li-product-price"><span class="amount">' + price + '</span></td>',
+          '<td class="quantity">\n' +
+          '<label>Số lượng</label>\n' +
+          '<div class="cart-plus-minus">\n' +
+          '<input class="cart-plus-minus-box" value="' + quantity + '" type="text">\n' +
+          '<div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>\n' +
+          '<div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>\n' +
+          '</div>\n' +
+          '</td>',
+          '<td class="product-subtotal"><span class="amount">'+sumPrice+'</span></td>',
+          '</tr>',
+        ].join('\n');
+    $(document).find('.cart-table').append(string2);
+    sum+=sumPrice;
+    var string3 =
+        ['<li>',
+          ' <a href="single-product.html" class="minicart-product-image">',
+          '<img src="' + image + '" alt="cart products">',
+          '</a>',
+          '<div class="minicart-product-details">',
+          '<h6><a href="single-product.html">' + product + '</a></h6>',
+          '<span class="price">' + price + '</span><span>VND x</span><span class="quantity">'+1+'</span>',
+          '</div>',
+          '<button class="close" title="Remove">',
+          '<i class="fa fa-close"></i>',
+          '</button>',
+          '</li>',
 
-    var string2 = [
-      "<tr>",
-      '<td class="li-product-remove"><a href="#"><i class="fa fa-times"></i></a></td>',
-      '<td class="li-product-thumbnail"><a href="#"><img src="' +
-        image +
-        '" alt="Li\'s Product Image"></a></td>',
-      '<td class="li-product-name"><a href="#">' + product + "</a></td>",
-      '<td class="li-product-price"><span class="amount">' +
-        price +
-        "</span></td>",
-      '<td class="quantity">\n' +
-        "<label>Số lượng</label>\n" +
-        '<div class="cart-plus-minus">\n' +
-        '<input class="cart-plus-minus-box" value="' +
-        quantity +
-        '" type="text">\n' +
-        '<div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>\n' +
-        '<div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>\n' +
-        "</div>\n" +
-        "</td>",
-      '<td class="product-subtotal"><span class="amount">$70.00</span></td>',
-      "</tr>",
-    ].join("\n");
-    $(document).find(".cart-table").append(string2);
+        ].join("\n");
+    $(document).find("ul.minicart-product-list").append(string3);
   }
-  /*----------------------------------------*/
-  /* 28. remove from small cart
-/*----------------------------------------*/
-  $(document).on("click", "button.close", function () {
-    var line = $(this).closest("li");
-    var name = line.find("h6").children().text();
-    line.remove();
-    var cart = _toJSONObject(sessionStorage.getItem(this.cartName));
+  storage1.setItem( total, _convertNumber( sum ));
+  $('.cart-page-total').find('span').text(storage1.getItem(total));
+  updateTotals()
+
+  $(document).on('click', 'td.li-product-remove', function () {
+    var line=$(this).parent();
+    var index=line.index();
+    var name=line.find('.li-product-name').children().text();
+
+    // cart =storage1.getItem( cartName );
+    //
+    // var cartObject = _toJSONObject( cart );
+    // var cartCopy = cartObject;
+    // var items = cartCopy.items;
+    // items.push( values );
+
+    var cart = _toJSONObject( storage1.getItem(cartName));
     var items = cart.items;
 
-    for (var i = 0; i < items.length; ++i) {
-      var item = items[i];
-      var product = item.product;
-      if (product == name) {
-        items.splice(i, 1);
-      }
-    }
+    items.splice( index, 1 );
+    var newItems = items;
+    var updatedCart = {};
+    updatedCart.items = newItems;
+    storage1.setItem( cartName,_toJSONString( updatedCart ) );
+    line.remove();
 
+
+    updateTotals()
+  });
+
+  $(document).on("click",".add-cart", function () {
+    var info = $(this).closest('.single-product-wrap');
+    var itemName = info.find(".product_name").text();
+    var itemPrice = info.find(".new-price").text();
+    var itemImageLink = info.find(".product-image").children('a').children('img').attr('src');
+    // alert(itemImageLink)
+    var string =
+        ['<li>',
+          ' <a href="single-product.html" class="minicart-product-image">',
+          '<img src="' + itemImageLink + '" alt="cart products">',
+          '</a>',
+          '<div class="minicart-product-details">',
+          '<h6><a href="single-product.html">' + itemName + '</a></h6>',
+          '<span class="price">' + itemPrice + '</span><span>VND x</span><span class="quantity">'+1+'</span>',
+          '</div>',
+          '<button class="close" title="Remove">',
+          '<i class="fa fa-close"></i>',
+          '</button>',
+          '</li>',
+
+        ].join("\n");
+    $("ul.minicart-product-list").append(string);
+    _addToCart({
+      product:itemName,
+      price:itemPrice,
+      quantity:1,
+      image:itemImageLink
+    });
+    // $('.minicart-total span').text(updateTotals()+" VND");
+    // $('.hm-minicart-trigger span.item-text').text(updateTotals()+" VND");
     updateTotals();
   });
 
-  $(document).on("click", "td.li-product-remove", function () {
-    var line = $(this).parent();
-    var name = line.find(".li-product-name").children().text();
 
-    var cart = _toJSONObject(sessionStorage.getItem(this.cartName));
+  /*----------------------------------------*/
+  /* 28. remove from small cart
+/*----------------------------------------*/
+  $(document).on('click', 'button.close', function () {
+    var line=$(this).closest('li');
+    var name=line.find('h6').children().text();
+    var index=line.index();
+
+    var cart = _toJSONObject( storage1.getItem(cartName));
     var items = cart.items;
-    for (var i = 0; i < items.length; ++i) {
-      var item = items[i];
-      var product = item.product;
 
-      if (product == name) {
-        items.splice(i, 1);
-        alert("asdsadadsad");
-      }
-    }
+    items.splice( index, 1 );
+    var newItems = items;
+    var updatedCart = {};
+    updatedCart.items = newItems;
+    storage1.setItem( cartName,_toJSONString( updatedCart ) );
     line.remove();
-
-    updateTotals();
+    updateTotals()
   });
 
   function updateTotals() {
     var totalCount = 0;
     var totalPrices = 0;
     var itemCount = 0;
-    $("ul.minicart-product-list li").each(function (i, val) {
+    $('ul.minicart-product-list li').each(function (i, val) {
       var item = $(val);
-      var itemquantity = parseInt(item.find(".quantity").text());
+      var itemquantity = parseInt(item.find('.quantity').text());
       totalCount += itemquantity;
       totalPrices += getTotalItemPrice(item, itemquantity);
       itemCount += 1;
     });
-    $(".minicart-total span").text(totalPrices + " VND");
-    $(".hm-minicart-trigger span.item-text").text(totalPrices + " VND");
-    $(".hm-minicart-trigger span.cart-item-count").text(itemCount);
+    $('.minicart-total span').text(totalPrices + " VND");
+    $('.hm-minicart-trigger span.item-text').text(totalPrices + " VND");
+    $('.hm-minicart-trigger span.cart-item-count').text(itemCount);
   }
 
   function getTotalItemPrice(item, itemquantity) {
-    var price = parseInt(item.find(".price").text());
+    var price = parseInt(item.find('.price').text());
     return price * itemquantity;
   }
 })(jQuery);
