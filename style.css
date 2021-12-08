@@ -1769,7 +1769,7 @@ textarea:focus {
 		color: #ffffff;
 }
 .hb-menu nav > ul > li > a::after {
-	content: "\f107";
+	content: "";
 	position: absolute;
 	top: 8px;
 	right: 15px;
@@ -2000,7 +2000,7 @@ textarea:focus {
 	top: 0;
 }
 .hb-menu nav ul > li > ul.hb-dropdown > li.sub-dropdown-holder::after {
-	content: "\f107";
+	content: "";
 	font-family: fontawesome;
 	position: absolute;
 	right: 25px;
@@ -4400,6 +4400,7 @@ thead {
 	padding-bottom: 25px;
 	text-transform: uppercase;
 	margin-bottom: 0;
+	margin-left: 5%;
 }
 .li-comment-section ul li {
 	display: -webkit-box;
@@ -4407,11 +4408,13 @@ thead {
 	display: flex;
 	padding: 10px 20px;
 	margin-bottom: 30px;
+	margin-left: 5%;
 	border: 1px solid #e1e1e1;
 }
 .li-comment-section ul li .author-avatar {
 	-ms-flex-preferred-size: 70px;
 	flex-basis: 70px;
+	
 }
 .li-comment-section ul li .comment-body {
 	-ms-flex-preferred-size: 100%;
@@ -4447,7 +4450,7 @@ thead {
 	background-color: #fed700;
 }
 .li-comment-section ul li.comment-children {
-	margin-left: 40px;
+	margin-left: 10%;
 }
 .li-blog-comment-wrapper h3 {
 	color: #242424;
