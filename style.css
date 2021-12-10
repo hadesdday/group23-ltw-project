@@ -1948,16 +1948,6 @@ textarea:focus {
   color: #ffffff;
 }
 .hb-menu nav > ul > li > a::after {
-<<<<<<< HEAD
-	content: "";
-	position: absolute;
-	top: 8px;
-	right: 15px;
-	font-family: fontawesome;
-	font-size: 18px;
-	transition: all 0.3s ease-in-out;
-	color: #242424;
-=======
   content: "\f107";
   position: absolute;
   top: 8px;
@@ -1966,7 +1956,6 @@ textarea:focus {
   font-size: 18px;
   transition: all 0.3s ease-in-out;
   color: #242424;
->>>>>>> main
 }
 .hb-menu nav > ul > li:nth-child(n + 5) > a::after {
   content: none;
@@ -2195,19 +2184,6 @@ textarea:focus {
   top: 0;
 }
 .hb-menu nav ul > li > ul.hb-dropdown > li.sub-dropdown-holder::after {
-<<<<<<< HEAD
-	content: "";
-	font-family: fontawesome;
-	position: absolute;
-	right: 25px;
-	top: 5px;
-	transition: all 0.3s ease-in-out;
-	color: #242424;
-}
-.hb-menu nav ul > li > ul.hb-dropdown > li.sub-dropdown-holder:hover::after {
-		transform: rotate(-90deg);
-		color: #fed700;
-=======
   content: "\f107";
   font-family: fontawesome;
   position: absolute;
@@ -2219,7 +2195,6 @@ textarea:focus {
 .hb-menu nav ul > li > ul.hb-dropdown > li.sub-dropdown-holder:hover::after {
   transform: rotate(-90deg);
   color: #fed700;
->>>>>>> main
 }
 .hb-menu nav ul > li > ul.hb-dropdown > li.sub-dropdown-holder > ul > li > a {
   display: block;
@@ -4819,29 +4794,6 @@ thead {
   border-color: #fed700;
 }
 .li-comment-section h3 {
-<<<<<<< HEAD
-	color: #242424;
-	font-size: 18px;
-	font-weight: 600;
-	padding-bottom: 25px;
-	text-transform: uppercase;
-	margin-bottom: 0;
-	margin-left: 5%;
-}
-.li-comment-section ul li {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	padding: 10px 20px;
-	margin-bottom: 30px;
-	margin-left: 5%;
-	border: 1px solid #e1e1e1;
-}
-.li-comment-section ul li .author-avatar {
-	-ms-flex-preferred-size: 70px;
-	flex-basis: 70px;
-	
-=======
   color: #242424;
   font-size: 18px;
   font-weight: 600;
@@ -4860,7 +4812,6 @@ thead {
 .li-comment-section ul li .author-avatar {
   -ms-flex-preferred-size: 70px;
   flex-basis: 70px;
->>>>>>> main
 }
 .li-comment-section ul li .comment-body {
   -ms-flex-preferred-size: 100%;
@@ -4896,11 +4847,7 @@ thead {
   background-color: #fed700;
 }
 .li-comment-section ul li.comment-children {
-<<<<<<< HEAD
-	margin-left: 10%;
-=======
   margin-left: 40px;
->>>>>>> main
 }
 .li-blog-comment-wrapper h3 {
   color: #242424;
