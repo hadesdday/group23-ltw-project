@@ -888,7 +888,7 @@ Note: main.js, All Default Scripting Languages For This Theme Included In This F
     var price = item.price;
     var quantity = item.quantity;
     var image = item.image;
-    var sumPrice = price * quantity;
+    var sumPrice=price*quantity;
     var string2 =
         ['<tr>',
           '<td class="li-product-remove"><a href="#"><i class="fa fa-times"></i></a></td>',
@@ -903,11 +903,11 @@ Note: main.js, All Default Scripting Languages For This Theme Included In This F
           '<div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>\n' +
           '</div>\n' +
           '</td>',
-          '<td class="product-subtotal"><span class="amount">' + sumPrice + '</span></td>',
+          '<td class="product-subtotal"><span class="amount">'+sumPrice+'</span></td>',
           '</tr>',
         ].join('\n');
     $(document).find('.cart-table').append(string2);
-    sum += sumPrice;
+    sum+=sumPrice;
     var string3 =
         ['<li>',
           ' <a href="single-product.html" class="minicart-product-image">',
@@ -915,7 +915,7 @@ Note: main.js, All Default Scripting Languages For This Theme Included In This F
           '</a>',
           '<div class="minicart-product-details">',
           '<h6><a href="single-product.html">' + product + '</a></h6>',
-          '<span class="price">' + price + '</span><span>VND x</span><span class="quantity">' + 1 + '</span>',
+          '<span class="price">' + price + '</span><span>VND x</span><span class="quantity">'+1+'</span>',
           '</div>',
           '<button class="close" title="Remove">',
           '<i class="fa fa-close"></i>',
@@ -924,20 +924,9 @@ Note: main.js, All Default Scripting Languages For This Theme Included In This F
 
         ].join("\n");
     $(document).find("ul.minicart-product-list").append(string3);
-
-
-    var string4 =
-        [
-          '<tr class="cart_item">',
-          '<td className="cart-product-name">' + product + '<strong className="product-quantity"> × ' + quantity + '</strong></td>',
-          '<td className="cart-product-total"><span className="amount">' + sumPrice + 'vnd</span></td>',
-          '</tr>',
-        ].join("\n");
-    $(document).find("tbody").append(string4);
   }
   storage1.setItem( total, _convertNumber( sum ));
   $('.cart-page-total').find('span').text(storage1.getItem(total));
-  $('tr.order-total').find('span').text( (Math.round(storage1.getItem(total) * 100) / 100) +"VND");
   updateTotals()
 
   $(document).on('click', 'td.li-product-remove', function () {
