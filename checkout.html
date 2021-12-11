@@ -441,38 +441,39 @@
                         <div class="col-12">
                             <div class="coupon-accordion">
                                 <!--Accordion Start-->
-                                <h3>Đã có tài khoản? <span id="showlogin">Nhấn vào đây để đăng nhập</span></h3>
+                                <h3>Returning customer? <span id="showlogin">Click here to login</span></h3>
                                 <div id="checkout-login" class="coupon-content">
                                     <div class="coupon-info">
+                                        <p class="coupon-text">Quisque gravida turpis sit amet nulla posuere lacinia. Cras sed est sit amet ipsum luctus.</p>
                                         <form action="#">
                                             <p class="form-row-first">
-                                                <label>Tài khoản hoặc email <span class="required">*</span></label>
+                                                <label>Username or email <span class="required">*</span></label>
                                                 <input type="text">
                                             </p>
                                             <p class="form-row-last">
-                                                <label>Mật khẩu  <span class="required">*</span></label>
+                                                <label>Password  <span class="required">*</span></label>
                                                 <input type="text">
                                             </p>
                                             <p class="form-row">
-                                                <input value="Đăng nhập" type="submit">
+                                                <input value="Login" type="submit">
                                                 <label>
                                                     <input type="checkbox">
-                                                     Lưu mật khảu
+                                                     Remember me 
                                                 </label>
                                             </p>
-                                            <p class="lost-password"><a href="#">Quên mật khẩu?</a></p>
+                                            <p class="lost-password"><a href="#">Lost your password?</a></p>
                                         </form>
                                     </div>
                                 </div>
                                 <!--Accordion End-->
                                 <!--Accordion Start-->
-                                <h3>Có mã giảm giá? <span id="showcoupon">Nhấn vào đây để nhập mã giảm giá</span></h3>
+                                <h3>Have a coupon? <span id="showcoupon">Click here to enter your code</span></h3>
                                 <div id="checkout_coupon" class="coupon-checkout-content">
                                     <div class="coupon-info">
                                         <form action="#">
                                             <p class="checkout-coupon">
-                                                <input placeholder="Mã giảm giá" type="text">
-                                                <input value="Áp dụng" type="submit">
+                                                <input placeholder="Coupon code" type="text">
+                                                <input value="Apply Coupon" type="submit">
                                             </p>
                                         </form>
                                     </div>
@@ -485,204 +486,211 @@
                         <div class="col-lg-6 col-12">
                             <form action="#">
                                 <div class="checkbox-form">
-                                    <h3>Chi tiết hóa đơn</h3>
+                                    <h3>Billing Details</h3>
                                     <div class="row">
-
-                                        <div class="col-md-12">
-                                            <div class="checkout-form-list">
-                                                <label>Họ và Tên <span class="required">*</span></label>
-                                                <input placeholder="" type="text">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-12">
-                                            <div class="checkout-form-list">
-                                                <label>Công ty</label>
-                                                <input placeholder="" type="text">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="checkout-form-list">
-                                                <label>Địa chỉ <span class="required">*</span></label>
-                                                <input placeholder="" type="text">
-                                            </div>
-                                        </div>
-
                                         <div class="col-md-12">
                                             <div class="country-select clearfix">
-                                                <label>Tỉnh / Thành phố<span class="required">*</span></label>
+                                                <label>Country <span class="required">*</span></label>
                                                 <select class="nice-select wide">
-                                                    <option data-display="TP.Hồ Chí Minh">TP.Hồ Chí Minh</option>
-                                                    <option value="dn">Đồng Nai</option>
-                                                    <option value="bd">Bình Dương</option>
-                                                    <option value="hn">Hà Nội</option>
-
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="country-select clearfix">
-                                                <label>Quận / Huyện <span class="required">*</span></label>
-                                                <select class="nice-select wide">
-                                                    <option data-display="Bangladesh">Quận / Huyện</option>
-
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="country-select clearfix">
-                                                <label>Phường / Xã <span class="required">*</span></label>
-                                                <select class="nice-select wide">
-                                                    <option data-display="Bangladesh">Phường / Xã</option>
+                                                  <option data-display="Bangladesh">Bangladesh</option>
+                                                  <option value="uk">London</option>
+                                                  <option value="rou">Romania</option>
+                                                  <option value="fr">French</option>
+                                                  <option value="de">Germany</option>
+                                                  <option value="aus">Australia</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="checkout-form-list">
-                                                <label>Địa chỉ Email <span class="required">*</span></label>
+                                                <label>First Name <span class="required">*</span></label>
+                                                <input placeholder="" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="checkout-form-list">
+                                                <label>Last Name <span class="required">*</span></label>
+                                                <input placeholder="" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="checkout-form-list">
+                                                <label>Company Name</label>
+                                                <input placeholder="" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="checkout-form-list">
+                                                <label>Address <span class="required">*</span></label>
+                                                <input placeholder="Street address" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="checkout-form-list">
+                                                <input placeholder="Apartment, suite, unit etc. (optional)" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="checkout-form-list">
+                                                <label>Town / City <span class="required">*</span></label>
+                                                <input type="text">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="checkout-form-list">
+                                                <label>State / County <span class="required">*</span></label>
+                                                <input placeholder="" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="checkout-form-list">
+                                                <label>Postcode / Zip <span class="required">*</span></label>
+                                                <input placeholder="" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="checkout-form-list">
+                                                <label>Email Address <span class="required">*</span></label>
                                                 <input placeholder="" type="email">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="checkout-form-list">
-                                                <label>Số điện thoại  <span class="required">*</span></label>
+                                                <label>Phone  <span class="required">*</span></label>
                                                 <input type="text">
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="checkout-form-list create-acc">
                                                 <input id="cbox" type="checkbox">
-                                                <label>Có muốn tạo tài khoản?</label>
+                                                <label>Create an account?</label>
                                             </div>
                                             <div id="cbox-info" class="checkout-form-list create-account">
-                                                <p>Tạo tài khoản bẳng cách nhập mật khẩu bên dưới và những thông tin bắt buộc bên trên. Nếu bạn đã có tài khoản, xin vui lòng đăng nhập ở đầu hóa đơn.</p>
-                                                <label>Mật khẩu  <span class="required">*</span></label>
-                                                <input placeholder="Mật khẩu" type="password">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="checkout-form-list">
-                                                <label>Yêu cầu khác (không bắt buộc)  </label>
-                                                <input placeholder="" type="text">
+                                                <p>Create an account by entering the information below. If you are a returning customer please login at the top of the page.</p>
+                                                <label>Account password  <span class="required">*</span></label>
+                                                <input placeholder="password" type="password">
                                             </div>
                                         </div>
                                     </div>
-<!--                                    <div class="different-address">-->
-<!--                                        <div class="ship-different-title">-->
-<!--                                            <h3>-->
-<!--                                                <label>giao hàng đến địa chỉ khác?</label>-->
-<!--                                                <input id="ship-box" type="checkbox">-->
-<!--                                            </h3>-->
-<!--                                        </div>-->
-<!--                                        <div id="ship-box-info" class="row">-->
-<!--                                            <div class="col-md-12">-->
-<!--                                                <div class="country-select clearfix">-->
-<!--                                                    <label>Country <span class="required">*</span></label>-->
-<!--                                                    <select class="nice-select wide">-->
-<!--                                                      <option data-display="Bangladesh">Bangladesh</option>-->
-<!--                                                      <option value="uk">London</option>-->
-<!--                                                      <option value="rou">Romania</option>-->
-<!--                                                      <option value="fr">French</option>-->
-<!--                                                      <option value="de">Germany</option>-->
-<!--                                                      <option value="aus">Australia</option>-->
-<!--                                                    </select>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                            <div class="col-md-12">-->
-<!--                                                <div class="checkout-form-list">-->
-<!--                                                    <label>First Name <span class="required">*</span></label>-->
-<!--                                                    <input placeholder="" type="text">-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                            <div class="col-md-12">-->
-<!--                                                <div class="checkout-form-list">-->
-<!--                                                    <label>Last Name <span class="required">*</span></label>-->
-<!--                                                    <input placeholder="" type="text">-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                            <div class="col-md-12">-->
-<!--                                                <div class="checkout-form-list">-->
-<!--                                                    <label>Company Name</label>-->
-<!--                                                    <input placeholder="" type="text">-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                            <div class="col-md-12">-->
-<!--                                                <div class="checkout-form-list">-->
-<!--                                                    <label>Address <span class="required">*</span></label>-->
-<!--                                                    <input placeholder="Street address" type="text">-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                            <div class="col-md-12">-->
-<!--                                                <div class="checkout-form-list">-->
-<!--                                                    <input placeholder="Apartment, suite, unit etc. (optional)" type="text">-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                            <div class="col-md-12">-->
-<!--                                                <div class="checkout-form-list">-->
-<!--                                                    <label>Town / City <span class="required">*</span></label>-->
-<!--                                                    <input type="text">-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                            <div class="col-md-12">-->
-<!--                                                <div class="checkout-form-list">-->
-<!--                                                    <label>State / County <span class="required">*</span></label>-->
-<!--                                                    <input placeholder="" type="text">-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                            <div class="col-md-12">-->
-<!--                                                <div class="checkout-form-list">-->
-<!--                                                    <label>Postcode / Zip <span class="required">*</span></label>-->
-<!--                                                    <input placeholder="" type="text">-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                            <div class="col-md-12">-->
-<!--                                                <div class="checkout-form-list">-->
-<!--                                                    <label>Email Address <span class="required">*</span></label>-->
-<!--                                                    <input placeholder="" type="email">-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                            <div class="col-md-12">-->
-<!--                                                <div class="checkout-form-list">-->
-<!--                                                    <label>Phone  <span class="required">*</span></label>-->
-<!--                                                    <input type="text">-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                        <div class="order-notes">-->
-<!--                                            <div class="checkout-form-list">-->
-<!--                                                <label>Order Notes</label>-->
-<!--                                                <textarea id="checkout-mess" cols="30" rows="10" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
+                                    <div class="different-address">
+                                        <div class="ship-different-title">
+                                            <h3>
+                                                <label>Ship to a different address?</label>
+                                                <input id="ship-box" type="checkbox">
+                                            </h3>
+                                        </div>
+                                        <div id="ship-box-info" class="row">
+                                            <div class="col-md-12">
+                                                <div class="country-select clearfix">
+                                                    <label>Country <span class="required">*</span></label>
+                                                    <select class="nice-select wide">
+                                                      <option data-display="Bangladesh">Bangladesh</option>
+                                                      <option value="uk">London</option>
+                                                      <option value="rou">Romania</option>
+                                                      <option value="fr">French</option>
+                                                      <option value="de">Germany</option>
+                                                      <option value="aus">Australia</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="checkout-form-list">
+                                                    <label>First Name <span class="required">*</span></label>
+                                                    <input placeholder="" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="checkout-form-list">
+                                                    <label>Last Name <span class="required">*</span></label>
+                                                    <input placeholder="" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="checkout-form-list">
+                                                    <label>Company Name</label>
+                                                    <input placeholder="" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="checkout-form-list">
+                                                    <label>Address <span class="required">*</span></label>
+                                                    <input placeholder="Street address" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="checkout-form-list">
+                                                    <input placeholder="Apartment, suite, unit etc. (optional)" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="checkout-form-list">
+                                                    <label>Town / City <span class="required">*</span></label>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="checkout-form-list">
+                                                    <label>State / County <span class="required">*</span></label>
+                                                    <input placeholder="" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="checkout-form-list">
+                                                    <label>Postcode / Zip <span class="required">*</span></label>
+                                                    <input placeholder="" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="checkout-form-list">
+                                                    <label>Email Address <span class="required">*</span></label>
+                                                    <input placeholder="" type="email">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="checkout-form-list">
+                                                    <label>Phone  <span class="required">*</span></label>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="order-notes">
+                                            <div class="checkout-form-list">
+                                                <label>Order Notes</label>
+                                                <textarea id="checkout-mess" cols="30" rows="10" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </form>
                         </div>
                         <div class="col-lg-6 col-12">
                             <div class="your-order">
-                                <h3>Hóa đơn của bạn</h3>
+                                <h3>Your order</h3>
                                 <div class="your-order-table table-responsive">
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th class="cart-product-name">Sản phẩm</th>
-                                                <th class="cart-product-total">Giá sản phẩm</th>
+                                                <th class="cart-product-name">Product</th>
+                                                <th class="cart-product-total">Total</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr class="cart_item">
-                                              <td class="cart-product-name"> sản phẩm 1<strong class="product-quantity"> × 1</strong></td>
+                                              <td class="cart-product-name"> Vestibulum suscipit<strong class="product-quantity"> × 1</strong></td>
                                               <td class="cart-product-total"><span class="amount">£165.00</span></td>  
                                             </tr>
-
+                                            <tr class="cart_item">
+                                              <td class="cart-product-name"> Vestibulum suscipit<strong class="product-quantity"> × 1</strong></td>
+                                              <td class="cart-product-total"><span class="amount">£165.00</span></td>  
+                                            </tr>
                                         </tbody>
                                         <tfoot>
-<!--                                            <tr class="cart-subtotal">-->
-<!--                                                <th>Cart Subtotal</th>-->
-<!--                                                <td><span class="amount">£215.00</span></td>-->
-<!--                                            </tr>-->
+                                            <tr class="cart-subtotal">
+                                                <th>Cart Subtotal</th>
+                                                <td><span class="amount">£215.00</span></td>
+                                            </tr>
                                             <tr class="order-total">
-                                                <th>Tổng tiền</th>
+                                                <th>Order Total</th>
                                                 <td><strong><span class="amount">£215.00</span></strong></td>
                                             </tr>
                                         </tfoot>
@@ -693,65 +701,49 @@
                                         <div id="accordion">
                                           <div class="card">
                                             <div class="card-header" id="#payment-1">
-                                                <input type="radio" name="payment" value="bank" id="bank" class="checkbox-payment1" checked>
-                                                <label for="bank">
-                                                    <h5 class="panel-title collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                        Chuyển khoản ngân hàng
-                                                    </h5>
-
-                                                </label>
+                                              <h5 class="panel-title">
+                                                <a class="" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                  Direct Bank Transfer.
+                                                </a>
+                                              </h5>
                                             </div>
                                             <div id="collapseOne" class="collapse show" data-parent="#accordion">
                                               <div class="card-body">
-                                                <p>Vui lòng chuyển số tiền hóa đơn vào tài khoản ngân hàng của chúng tôi. Bạn sẽ nhận được xác nhận đơn hàng của chúng tôi theo email chứa chi tiết ngân hàng và số đơn hàng. Hàng hóa sẽ được giữ chỗ 3 ngày cho bạn và chúng tôi sẽ xử lý đơn hàng của bạn ngay sau khi nhận được thanh toán. Chi tiết tài khoản nhận tiền</p>
+                                                <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
                                               </div>
                                             </div>
                                           </div>
                                           <div class="card">
                                             <div class="card-header" id="#payment-2">
-                                              <input type="radio" name="payment" value="cod" id="cod" class="checkbox-payment1">
-                                                <label for="cod">
-                                                    <h5 class="panel-title collapsed"  data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-
-                                                        Thanh toán khi nhận hàng
-                                                    </h5>
-
-                                                </label>
+                                              <h5 class="panel-title">
+                                                <a class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                  Cheque Payment
+                                                </a>
+                                              </h5>
                                             </div>
                                             <div id="collapseTwo" class="collapse" data-parent="#accordion">
                                               <div class="card-body">
-                                                <p>Bạn sẽ thanh toán cho nhân viên giao hàng.</p>
+                                                <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
                                               </div>
                                             </div>
                                           </div>
                                           <div class="card">
-                                            <div class="card-header" id="#payment-3" style="margin-left: 18px;">
+                                            <div class="card-header" id="#payment-3">
                                               <h5 class="panel-title">
                                                 <a class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                  Thanh toán qua ví điện tử
+                                                  PayPal
                                                 </a>
                                               </h5>
                                             </div>
                                             <div id="collapseThree" class="collapse" data-parent="#accordion">
                                               <div class="card-body">
-<!--                                                  <div><img class="payment-image" src="images/payment/momo.png"></div>-->
-
-                                                      <input type="radio" name="payment" value="paypal" id="paypal" class="checkbox-payment">
-                                                      <label for="paypal">
-                                                          <i><img class="payment-image" src="images/payment/paypal.png"></i>
-
-                                                      </label>
-                                                      <input type="radio" name="payment" value="momo" id="momo" class="checkbox-payment">
-                                                      <label for="momo" class="momo">
-                                                          <i><img class="payment-image" src="images/payment/momo.png"></i>
-                                                      </label>
-
+                                                <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
                                               </div>
                                             </div>
                                           </div>
                                         </div>
                                         <div class="order-button-payment">
-                                            <input value="Thanh toán" type="submit">
+                                            <input value="Place order" type="submit">
                                         </div>
                                     </div>
                                 </div>
@@ -776,8 +768,8 @@
                                             <img src="images/shipping-icon/1.png" alt="Shipping Icon">
                                         </div>
                                         <div class="shipping-text">
-                                            <h2>Miễn phí vận chuyển</h2>
-                                            <p>Và miễn phí tiền vận chuyển khi trả lại hàng. Kiểm tra ngày giao hàng trong thủ tục thanh toán.</p>
+                                            <h2>Free Delivery</h2>
+                                            <p>And free returns. See checkout for delivery dates.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -789,8 +781,8 @@
                                             <img src="images/shipping-icon/2.png" alt="Shipping Icon">
                                         </div>
                                         <div class="shipping-text">
-                                            <h2>Phương thức thanh toán an toàn</h2>
-                                            <p>Thanh toán với phương thức thanh toán phổ biến nhất và an toàn nhất.</p>
+                                            <h2>Safe Payment</h2>
+                                            <p>Pay with the world's most popular and secure payment methods.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -802,8 +794,8 @@
                                             <img src="images/shipping-icon/3.png" alt="Shipping Icon">
                                         </div>
                                         <div class="shipping-text">
-                                            <h2>Mua hàng với trải nghiệm tốt nhất</h2>
-                                            <p>Chúng tôi đảm bảo an toàn tuyệt đối cho quý khách từ khâu mua hàng cho đến khâu vận chuyển.</p>
+                                            <h2>Shop with Confidence</h2>
+                                            <p>Our Buyer Protection covers your purchasefrom click to delivery.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -815,8 +807,8 @@
                                             <img src="images/shipping-icon/4.png" alt="Shipping Icon">
                                         </div>
                                         <div class="shipping-text">
-                                            <h2>Trung tâm hỗ trợ 24/7</h2>
-                                            <p>có thắc mắc xin vui lòng gọi chuyên gia hoặc chat online.</p>
+                                            <h2>24/7 Help Center</h2>
+                                            <p>Have a question? Call a Specialist or chat online.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -837,21 +829,21 @@
                                     <div class="footer-logo">
                                         <img src="images/menu/logo/1.jpg" alt="Footer Logo">
                                         <p class="info">
-                                            Chúng tôi có sản phẩm tốt nhất cho ngôi nhà của bạn.
+                                            We are a team of designers and developers that create high quality HTML Template & Woocommerce, Shopify Theme.
                                         </p>
                                     </div>
                                     <ul class="des">
                                         <li>
-                                            <span>Địa chỉ: </span>
-                                            Tp.Hồ Chí Minh, Việt Nam
+                                            <span>Address: </span>
+                                            6688Princess Road, London, Greater London BAS 23JK, UK
                                         </li>
                                         <li>
-                                            <span>Số điện thoại: </span>
-                                            <a href="#">012345678</a>
+                                            <span>Phone: </span>
+                                            <a href="#">(+123) 123 321 345</a>
                                         </li>
                                         <li>
                                             <span>Email: </span>
-                                            <a href="">info@gmail.com</a>
+                                            <a href="mailto://info@yourdomain.com">info@yourdomain.com</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -859,11 +851,12 @@
                                 <!-- Begin Footer Block Area -->
                                 <div class="col-lg-2 col-md-3 col-sm-6">
                                     <div class="footer-block">
-                                        <h3 class="footer-block-title">Sản phẩm</h3>
+                                        <h3 class="footer-block-title">Product</h3>
                                         <ul>
-                                            <li><a href="#">Giảm giá</a></li>
-                                            <li><a href="#">Sản phẩm mới</a></li>
-                                            <li><a href="#">Bán chạy</a></li>
+                                            <li><a href="#">Prices drop</a></li>
+                                            <li><a href="#">New products</a></li>
+                                            <li><a href="#">Best sales</a></li>
+                                            <li><a href="#">Contact us</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -871,12 +864,12 @@
                                 <!-- Begin Footer Block Area -->
                                 <div class="col-lg-2 col-md-3 col-sm-6">
                                     <div class="footer-block">
-                                        <h3 class="footer-block-title">Về công ty</h3>
+                                        <h3 class="footer-block-title">Our company</h3>
                                         <ul>
-                                            <li><a href="#">Giao hàng</a></li>
+                                            <li><a href="#">Delivery</a></li>
                                             <li><a href="#">Legal Notice</a></li>
-                                            <li><a href="#">Về chúng tôi</a></li>
-                                            <li><a href="#">Liên hệ</a></li>
+                                            <li><a href="#">About us</a></li>
+                                            <li><a href="#">Contact us</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -920,12 +913,12 @@
                                     </div>
                                     <!-- Begin Footer Newsletter Area -->
                                     <div class="footer-newsletter">
-                                        <h4>Đăng kí để nhận thêm nhiều ưu đãi</h4>
+                                        <h4>Sign up to newsletter</h4>
                                         <form action="#" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="footer-subscribe-form validate" target="_blank" novalidate>
                                            <div id="mc_embed_signup_scroll">
                                               <div id="mc-form" class="mc-form subscribe-form form-group" >
-                                                <input id="mc-email" type="email" autocomplete="off" placeholder="Nhập email của bạn" />
-                                                <button  class="btn" id="mc-submit">Đăng kí</button>
+                                                <input id="mc-email" type="email" autocomplete="off" placeholder="Enter your email" />
+                                                <button  class="btn" id="mc-submit">Subscribe</button>
                                               </div>
                                            </div>
                                         </form>
@@ -943,6 +936,31 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
+                                <!-- Begin Footer Links Area -->
+                                <div class="footer-links">
+                                    <ul>
+                                        <li><a href="#">Online Shopping</a></li>
+                                        <li><a href="#">Promotions</a></li>
+                                        <li><a href="#">My Orders</a></li>
+                                        <li><a href="#">Help</a></li>
+                                        <li><a href="#">Customer Service</a></li>
+                                        <li><a href="#">Support</a></li>
+                                        <li><a href="#">Most Populars</a></li>
+                                        <li><a href="#">New Arrivals</a></li>
+                                        <li><a href="#">Special Products</a></li>
+                                        <li><a href="#">Manufacturers</a></li>
+                                        <li><a href="#">Our Stores</a></li>
+                                        <li><a href="#">Shipping</a></li>
+                                        <li><a href="#">Payments</a></li>
+                                        <li><a href="#">Warantee</a></li>
+                                        <li><a href="#">Refunds</a></li>
+                                        <li><a href="#">Checkout</a></li>
+                                        <li><a href="#">Discount</a></li>
+                                        <li><a href="#">Refunds</a></li>
+                                        <li><a href="#">Policy Shipping</a></li>
+                                    </ul>
+                                </div>
+                                <!-- Footer Links Area End Here -->
                                 <!-- Begin Footer Payment Area -->
                                 <div class="copyright text-center">
                                     <a href="#">
@@ -952,7 +970,7 @@
                                 <!-- Footer Payment Area End Here -->
                                 <!-- Begin Copyright Area -->
                                 <div class="copyright text-center pt-25">
-                                    <span><a href="https://www.templatespoint.net" target="_blank">Copy right</a></span>
+                                    <span><a href="https://www.templatespoint.net" target="_blank">Templates Point</a></span>
                                 </div>
                                 <!-- Copyright Area End Here -->
                             </div>
