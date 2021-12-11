@@ -3198,6 +3198,7 @@ li.rx-parent a.rx-show::after {
 	padding: 4px 0 10px 0;
 	overflow: hidden;
 }
+
 li.right-menu .cat-mega-menu > li, li.right-menu .cat-mega-menu-2 > li {
 	width: 33.333%;
 	float: left;
