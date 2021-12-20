@@ -620,42 +620,29 @@ Note: main.js, All Default Scripting Languages For This Theme Included In This F
     });
   });
 
-  function removeAscent(str) {
-    if (str === null || str === undefined) return str;
-    str = str.toLowerCase();
-    str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
-    str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e");
-    str = str.replace(/ì|í|ị|ỉ|ĩ/g, "i");
-    str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, "o");
-    str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u");
-    str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y");
-    str = str.replace(/đ/g, "d");
-    return str;
-  }
-
   //register validate
   $(() => {
-    var fullnameValid = false;
+    var usernameValid = false;
     var emailRegValid = false;
     var registerPasswordValid = false;
     var confirmPasswordValid = false;
 
-    $("#fullname").on("input", () => {
-      var fullname = $("#fullname").val().replaceAll(" ", "");
+    $("#username__reg").on("input", () => {
+      var username = $("#username__reg").val();
+      const usernameRegex =
+        /^(?=[a-z0-9.]{3,20}$)[a-z0-9]+\.?[a-z0-9]+$|^.*@\w+\.[\w.]+$/i;
 
-      var fNameRegex = /^[a-zA-Z ]{2,}$/g;
-
-      if (fullname.length < 1 || !fNameRegex.test(removeAscent(fullname))) {
-        fullnameValid = false;
-        $("#fullname").addClass("error");
+      if (username.length < 1 || !usernameRegex.test(username)) {
+        usernameValid = false;
+        $("#username__reg").addClass("error");
         $(".error__label").first().addClass("show");
       } else {
-        fullnameValid = true;
-        $("#fullname").removeClass("error");
+        usernameValid = true;
+        $("#username__reg").removeClass("error");
         $(".error__label").first().removeClass("show");
       }
       if (
-        fullnameValid &&
+        usernameValid &&
         emailRegValid &&
         registerPasswordValid &&
         confirmPasswordValid
@@ -674,14 +661,14 @@ Note: main.js, All Default Scripting Languages For This Theme Included In This F
       if (emailReg.length < 1 || !emailRegRegex.test(emailReg)) {
         emailRegValid = false;
         $("#email__reg").addClass("error");
-        $(".error__label").eq(1).addClass("show");
+        $(".error__label").eq(3).addClass("show");
       } else {
         emailRegValid = true;
         $("#email__reg").removeClass("error");
-        $(".error__label").eq(1).removeClass("show");
+        $(".error__label").eq(3).removeClass("show");
       }
       if (
-        fullnameValid &&
+        usernameValid &&
         emailRegValid &&
         registerPasswordValid &&
         confirmPasswordValid
@@ -700,14 +687,14 @@ Note: main.js, All Default Scripting Languages For This Theme Included In This F
       if (password.length < 1 || !passwordRegex.test(password)) {
         registerPasswordValid = false;
         $("#password__reg").addClass("error");
-        $(".error__label").eq(2).addClass("show");
+        $(".error__label").eq(1).addClass("show");
       } else {
         registerPasswordValid = true;
         $("#password__reg").removeClass("error");
-        $(".error__label").eq(2).removeClass("show");
+        $(".error__label").eq(1).removeClass("show");
       }
       if (
-        fullnameValid &&
+        usernameValid &&
         emailRegValid &&
         registerPasswordValid &&
         confirmPasswordValid
@@ -725,15 +712,15 @@ Note: main.js, All Default Scripting Languages For This Theme Included In This F
       if (password !== confirmPassword) {
         confirmPasswordValid = false;
         $("#confirm__password").addClass("error");
-        $(".error__label").last().addClass("show");
+        $(".error__label").eq(2).addClass("show");
       } else {
         confirmPasswordValid = true;
         $("#confirm__password").removeClass("error");
-        $(".error__label").last().removeClass("show");
+        $(".error__label").eq(2).removeClass("show");
       }
 
       if (
-        fullnameValid &&
+        usernameValid &&
         emailRegValid &&
         registerPasswordValid &&
         confirmPasswordValid
@@ -770,7 +757,7 @@ Note: main.js, All Default Scripting Languages For This Theme Included In This F
       }
     });
   });
-  
+
   //change-password validate
   $(() => {
     var oldPasswordValid = false;
@@ -827,11 +814,11 @@ Note: main.js, All Default Scripting Languages For This Theme Included In This F
       if (newPassword !== confirmNewPassword) {
         confirmNewPasswordValid = false;
         $("#npassword__confirm").addClass("error");
-        $(".error__label").last().addClass("show");
+        $(".error__label").eq(2).addClass("show");
       } else {
         confirmNewPasswordValid = true;
         $("#npassword__confirm").removeClass("error");
-        $(".error__label").last().removeClass("show");
+        $(".error__label").eq(2).removeClass("show");
       }
 
       if (oldPasswordValid && newPasswordValid && confirmNewPasswordValid) {
@@ -842,37 +829,36 @@ Note: main.js, All Default Scripting Languages For This Theme Included In This F
     });
   });
 
- //add cart
+  //add cart
   cartName = "cart";
   total = "total";
   storage1 = sessionStorage;
-  if( storage1.getItem( cartName ) == null ) {
-
+  if (storage1.getItem(cartName) == null) {
     var cart = {};
     cart.items = [];
 
-    storage1.setItem( cartName, _toJSONString( cart ) );
-    storage1.setItem( total, "0" );
+    storage1.setItem(cartName, _toJSONString(cart));
+    storage1.setItem(total, "0");
   }
 
-  function _addToCart( values ) {
-    var cartObject = _toJSONObject( storage1.getItem( cartName ));
+  function _addToCart(values) {
+    var cartObject = _toJSONObject(storage1.getItem(cartName));
     var cartCopy = cartObject;
     var items = cartCopy.items;
-    items.push( values );
+    items.push(values);
 
-    storage1.setItem( cartName, _toJSONString( cartCopy ) );
+    storage1.setItem(cartName, _toJSONString(cartCopy));
   }
 
-  function _toJSONObject( str ) {
-    var obj = JSON.parse( str );
+  function _toJSONObject(str) {
+    var obj = JSON.parse(str);
     return obj;
   }
-  function _toJSONString( obj ) {
-    var str = JSON.stringify( obj );
+  function _toJSONString(obj) {
+    var str = JSON.stringify(obj);
     return str;
   }
-  function _convertNumber( n ) {
+  function _convertNumber(n) {
     var str = n.toString();
     return str;
   }
@@ -881,58 +867,69 @@ Note: main.js, All Default Scripting Languages For This Theme Included In This F
 /*----------------------------------------*/
   var cart = _toJSONObject(storage1.getItem(cartName));
   var items = cart.items;
-  var sum=0;
+  var sum = 0;
   for (var i = 0; i < items.length; ++i) {
     var item = items[i];
     var product = item.product;
     var price = item.price;
     var quantity = item.quantity;
     var image = item.image;
-    var sumPrice=price*quantity;
-    var string2 =
-        ['<tr>',
-          '<td class="li-product-remove"><a href="#"><i class="fa fa-times"></i></a></td>',
-          '<td class="li-product-thumbnail"><a href="#"><img src="' + image + '" alt="Li\'s Product Image"></a></td>',
-          '<td class="li-product-name"><a href="#">' + product + '</a></td>',
-          '<td class="li-product-price"><span class="amount">' + price + '</span></td>',
-          '<td class="quantity">\n' +
-          '<label>Số lượng</label>\n' +
-          '<div class="cart-plus-minus">\n' +
-          '<input class="cart-plus-minus-box" value="' + quantity + '" type="text">\n' +
-          '<div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>\n' +
-          '<div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>\n' +
-          '</div>\n' +
-          '</td>',
-          '<td class="product-subtotal"><span class="amount">'+sumPrice+'</span></td>',
-          '</tr>',
-        ].join('\n');
-    $(document).find('.cart-table').append(string2);
-    sum+=sumPrice;
-    var string3 =
-        ['<li>',
-          ' <a href="single-product.html" class="minicart-product-image">',
-          '<img src="' + image + '" alt="cart products">',
-          '</a>',
-          '<div class="minicart-product-details">',
-          '<h6><a href="single-product.html">' + product + '</a></h6>',
-          '<span class="price">' + price + '</span><span>VND x</span><span class="quantity">'+1+'</span>',
-          '</div>',
-          '<button class="close" title="Remove">',
-          '<i class="fa fa-close"></i>',
-          '</button>',
-          '</li>',
-
-        ].join("\n");
+    var sumPrice = price * quantity;
+    var string2 = [
+      "<tr>",
+      '<td class="li-product-remove"><a href="#"><i class="fa fa-times"></i></a></td>',
+      '<td class="li-product-thumbnail"><a href="#"><img src="' +
+        image +
+        '" alt="Li\'s Product Image"></a></td>',
+      '<td class="li-product-name"><a href="#">' + product + "</a></td>",
+      '<td class="li-product-price"><span class="amount">' +
+        price +
+        "</span></td>",
+      '<td class="quantity">\n' +
+        "<label>Số lượng</label>\n" +
+        '<div class="cart-plus-minus">\n' +
+        '<input class="cart-plus-minus-box" value="' +
+        quantity +
+        '" type="text">\n' +
+        '<div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>\n' +
+        '<div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>\n' +
+        "</div>\n" +
+        "</td>",
+      '<td class="product-subtotal"><span class="amount">' +
+        sumPrice +
+        "</span></td>",
+      "</tr>",
+    ].join("\n");
+    $(document).find(".cart-table").append(string2);
+    sum += sumPrice;
+    var string3 = [
+      "<li>",
+      ' <a href="single-product.html" class="minicart-product-image">',
+      '<img src="' + image + '" alt="cart products">',
+      "</a>",
+      '<div class="minicart-product-details">',
+      '<h6><a href="single-product.html">' + product + "</a></h6>",
+      '<span class="price">' +
+        price +
+        '</span><span>VND x</span><span class="quantity">' +
+        1 +
+        "</span>",
+      "</div>",
+      '<button class="close" title="Remove">',
+      '<i class="fa fa-close"></i>',
+      "</button>",
+      "</li>",
+    ].join("\n");
     $(document).find("ul.minicart-product-list").append(string3);
   }
-  storage1.setItem( total, _convertNumber( sum ));
-  $('.cart-page-total').find('span').text(storage1.getItem(total));
-  updateTotals()
+  storage1.setItem(total, _convertNumber(sum));
+  $(".cart-page-total").find("span").text(storage1.getItem(total));
+  updateTotals();
 
-  $(document).on('click', 'td.li-product-remove', function () {
-    var line=$(this).parent();
-    var index=line.index();
-    var name=line.find('.li-product-name').children().text();
+  $(document).on("click", "td.li-product-remove", function () {
+    var line = $(this).parent();
+    var index = line.index();
+    var name = line.find(".li-product-name").children().text();
 
     // cart =storage1.getItem( cartName );
     //
@@ -941,92 +938,97 @@ Note: main.js, All Default Scripting Languages For This Theme Included In This F
     // var items = cartCopy.items;
     // items.push( values );
 
-    var cart = _toJSONObject( storage1.getItem(cartName));
+    var cart = _toJSONObject(storage1.getItem(cartName));
     var items = cart.items;
 
-    items.splice( index, 1 );
+    items.splice(index, 1);
     var newItems = items;
     var updatedCart = {};
     updatedCart.items = newItems;
-    storage1.setItem( cartName,_toJSONString( updatedCart ) );
+    storage1.setItem(cartName, _toJSONString(updatedCart));
     line.remove();
 
-
-    updateTotals()
+    updateTotals();
   });
 
-  $(document).on("click",".add-cart", function () {
-    var info = $(this).closest('.single-product-wrap');
+  $(document).on("click", ".add-cart", function () {
+    var info = $(this).closest(".single-product-wrap");
     var itemName = info.find(".product_name").text();
     var itemPrice = info.find(".new-price").text();
-    var itemImageLink = info.find(".product-image").children('a').children('img').attr('src');
+    var itemImageLink = info
+      .find(".product-image")
+      .children("a")
+      .children("img")
+      .attr("src");
     // alert(itemImageLink)
-    var string =
-        ['<li>',
-          ' <a href="single-product.html" class="minicart-product-image">',
-          '<img src="' + itemImageLink + '" alt="cart products">',
-          '</a>',
-          '<div class="minicart-product-details">',
-          '<h6><a href="single-product.html">' + itemName + '</a></h6>',
-          '<span class="price">' + itemPrice + '</span><span>VND x</span><span class="quantity">'+1+'</span>',
-          '</div>',
-          '<button class="close" title="Remove">',
-          '<i class="fa fa-close"></i>',
-          '</button>',
-          '</li>',
-
-        ].join("\n");
+    var string = [
+      "<li>",
+      ' <a href="single-product.html" class="minicart-product-image">',
+      '<img src="' + itemImageLink + '" alt="cart products">',
+      "</a>",
+      '<div class="minicart-product-details">',
+      '<h6><a href="single-product.html">' + itemName + "</a></h6>",
+      '<span class="price">' +
+        itemPrice +
+        '</span><span>VND x</span><span class="quantity">' +
+        1 +
+        "</span>",
+      "</div>",
+      '<button class="close" title="Remove">',
+      '<i class="fa fa-close"></i>',
+      "</button>",
+      "</li>",
+    ].join("\n");
     $("ul.minicart-product-list").append(string);
     _addToCart({
-      product:itemName,
-      price:itemPrice,
-      quantity:1,
-      image:itemImageLink
+      product: itemName,
+      price: itemPrice,
+      quantity: 1,
+      image: itemImageLink,
     });
     // $('.minicart-total span').text(updateTotals()+" VND");
     // $('.hm-minicart-trigger span.item-text').text(updateTotals()+" VND");
     updateTotals();
   });
 
-
   /*----------------------------------------*/
   /* 28. remove from small cart
 /*----------------------------------------*/
-  $(document).on('click', 'button.close', function () {
-    var line=$(this).closest('li');
-    var name=line.find('h6').children().text();
-    var index=line.index();
+  $(document).on("click", "button.close", function () {
+    var line = $(this).closest("li");
+    var name = line.find("h6").children().text();
+    var index = line.index();
 
-    var cart = _toJSONObject( storage1.getItem(cartName));
+    var cart = _toJSONObject(storage1.getItem(cartName));
     var items = cart.items;
 
-    items.splice( index, 1 );
+    items.splice(index, 1);
     var newItems = items;
     var updatedCart = {};
     updatedCart.items = newItems;
-    storage1.setItem( cartName,_toJSONString( updatedCart ) );
+    storage1.setItem(cartName, _toJSONString(updatedCart));
     line.remove();
-    updateTotals()
+    updateTotals();
   });
 
   function updateTotals() {
     var totalCount = 0;
     var totalPrices = 0;
     var itemCount = 0;
-    $('ul.minicart-product-list li').each(function (i, val) {
+    $("ul.minicart-product-list li").each(function (i, val) {
       var item = $(val);
-      var itemquantity = parseInt(item.find('.quantity').text());
+      var itemquantity = parseInt(item.find(".quantity").text());
       totalCount += itemquantity;
       totalPrices += getTotalItemPrice(item, itemquantity);
       itemCount += 1;
     });
-    $('.minicart-total span').text(totalPrices + " VND");
-    $('.hm-minicart-trigger span.item-text').text(totalPrices + " VND");
-    $('.hm-minicart-trigger span.cart-item-count').text(itemCount);
+    $(".minicart-total span").text(totalPrices + " VND");
+    $(".hm-minicart-trigger span.item-text").text(totalPrices + " VND");
+    $(".hm-minicart-trigger span.cart-item-count").text(itemCount);
   }
 
   function getTotalItemPrice(item, itemquantity) {
-    var price = parseInt(item.find('.price').text());
+    var price = parseInt(item.find(".price").text());
     return price * itemquantity;
   }
 })(jQuery);
