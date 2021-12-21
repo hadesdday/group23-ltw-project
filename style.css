@@ -1731,8 +1731,8 @@ textarea:focus {
 }
 .cart-item-count {
   position: absolute;
-  top: -20px;
-  left: -25px;
+  top: -25px;
+  left: -65px;
   display: block;
   overflow: hidden;
   min-width: 26px;
@@ -5917,7 +5917,10 @@ input[class="checkbox-payment"] {
 .verify-button:disabled {
   background: #d1d1d1;
 }
-
+.cart-image{
+  width: 100px;
+  height: 100px;
+}
 /*----------------------------------------------------------------------------------------------------*/
 /*------------------------------------------> The End <-----------------------------------------------*/
 /*----------------------------------------------------------------------------------------------------*/
