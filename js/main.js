@@ -620,42 +620,29 @@ Note: main.js, All Default Scripting Languages For This Theme Included In This F
     });
   });
 
-  function removeAscent(str) {
-    if (str === null || str === undefined) return str;
-    str = str.toLowerCase();
-    str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
-    str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e");
-    str = str.replace(/ì|í|ị|ỉ|ĩ/g, "i");
-    str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, "o");
-    str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u");
-    str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y");
-    str = str.replace(/đ/g, "d");
-    return str;
-  }
-
   //register validate
   $(() => {
-    var fullnameValid = false;
+    var usernameValid = false;
     var emailRegValid = false;
     var registerPasswordValid = false;
     var confirmPasswordValid = false;
 
-    $("#fullname").on("input", () => {
-      var fullname = $("#fullname").val().replaceAll(" ", "");
+    $("#username__reg").on("input", () => {
+      var username = $("#username__reg").val();
+      const usernameRegex =
+        /^(?=[a-z0-9.]{3,20}$)[a-z0-9]+\.?[a-z0-9]+$|^.*@\w+\.[\w.]+$/i;
 
-      var fNameRegex = /^[a-zA-Z ]{2,}$/g;
-
-      if (fullname.length < 1 || !fNameRegex.test(removeAscent(fullname))) {
-        fullnameValid = false;
-        $("#fullname").addClass("error");
+      if (username.length < 1 || !usernameRegex.test(username)) {
+        usernameValid = false;
+        $("#username__reg").addClass("error");
         $(".error__label").first().addClass("show");
       } else {
-        fullnameValid = true;
-        $("#fullname").removeClass("error");
+        usernameValid = true;
+        $("#username__reg").removeClass("error");
         $(".error__label").first().removeClass("show");
       }
       if (
-        fullnameValid &&
+        usernameValid &&
         emailRegValid &&
         registerPasswordValid &&
         confirmPasswordValid
@@ -674,14 +661,14 @@ Note: main.js, All Default Scripting Languages For This Theme Included In This F
       if (emailReg.length < 1 || !emailRegRegex.test(emailReg)) {
         emailRegValid = false;
         $("#email__reg").addClass("error");
-        $(".error__label").eq(1).addClass("show");
+        $(".error__label").eq(3).addClass("show");
       } else {
         emailRegValid = true;
         $("#email__reg").removeClass("error");
-        $(".error__label").eq(1).removeClass("show");
+        $(".error__label").eq(3).removeClass("show");
       }
       if (
-        fullnameValid &&
+        usernameValid &&
         emailRegValid &&
         registerPasswordValid &&
         confirmPasswordValid
@@ -700,14 +687,14 @@ Note: main.js, All Default Scripting Languages For This Theme Included In This F
       if (password.length < 1 || !passwordRegex.test(password)) {
         registerPasswordValid = false;
         $("#password__reg").addClass("error");
-        $(".error__label").eq(2).addClass("show");
+        $(".error__label").eq(1).addClass("show");
       } else {
         registerPasswordValid = true;
         $("#password__reg").removeClass("error");
-        $(".error__label").eq(2).removeClass("show");
+        $(".error__label").eq(1).removeClass("show");
       }
       if (
-        fullnameValid &&
+        usernameValid &&
         emailRegValid &&
         registerPasswordValid &&
         confirmPasswordValid
@@ -725,15 +712,15 @@ Note: main.js, All Default Scripting Languages For This Theme Included In This F
       if (password !== confirmPassword) {
         confirmPasswordValid = false;
         $("#confirm__password").addClass("error");
-        $(".error__label").last().addClass("show");
+        $(".error__label").eq(2).addClass("show");
       } else {
         confirmPasswordValid = true;
         $("#confirm__password").removeClass("error");
-        $(".error__label").last().removeClass("show");
+        $(".error__label").eq(2).removeClass("show");
       }
 
       if (
-        fullnameValid &&
+        usernameValid &&
         emailRegValid &&
         registerPasswordValid &&
         confirmPasswordValid
@@ -770,7 +757,7 @@ Note: main.js, All Default Scripting Languages For This Theme Included In This F
       }
     });
   });
-  
+
   //change-password validate
   $(() => {
     var oldPasswordValid = false;
@@ -827,11 +814,11 @@ Note: main.js, All Default Scripting Languages For This Theme Included In This F
       if (newPassword !== confirmNewPassword) {
         confirmNewPasswordValid = false;
         $("#npassword__confirm").addClass("error");
-        $(".error__label").last().addClass("show");
+        $(".error__label").eq(2).addClass("show");
       } else {
         confirmNewPasswordValid = true;
         $("#npassword__confirm").removeClass("error");
-        $(".error__label").last().removeClass("show");
+        $(".error__label").eq(2).removeClass("show");
       }
 
       if (oldPasswordValid && newPasswordValid && confirmNewPasswordValid) {
@@ -842,6 +829,5 @@ Note: main.js, All Default Scripting Languages For This Theme Included In This F
     });
   });
 
- //add cart
 
 })(jQuery);
