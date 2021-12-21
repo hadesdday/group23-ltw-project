@@ -1,5 +1,5 @@
 /*-----------------------------------------------------------------------------------
-		Template Name: limupa - Digital Products Store ECommerce Bootstrap 4 Template
+		Template Name: NLU
 		Template URI: http://bootexperts.com
 		Description: This is digital products store html5 template for eCommerce websites, nice and clean design;
 		Author: HasTech
@@ -37,7 +37,7 @@
 		05. Home Page Four
 		06. Other Pages
 			6.1 Li's Shop Page
-			6.2 Li's Frequently Asked Question(FAQ)
+			6.2 Li's Frequently Asked Question(FAQs)
 			6.3 Li's Wishlist Page
 			6.4 Li's Checkout Page
 			6.5 Li's Login Register
@@ -64,7 +64,7 @@
 	font-family: 'Poppins', sans-serif;
 	font-family: 'Rubik', sans-serif;
 */
-@import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Rubik:300,300i,400,400i,500,500i,700,700i,900,900i");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 /*----------------------------------------*/
 /*  01. Dfault Style
 /*----------------------------------------*/
@@ -73,7 +73,7 @@
 /*----------------------------------------*/
 body {
   color: #242424;
-  font-family: "Rubik", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: normal;
@@ -1731,8 +1731,8 @@ textarea:focus {
 }
 .cart-item-count {
   position: absolute;
-  top: -12px;
-  left: -12px;
+  top: -20px;
+  left: -25px;
   display: block;
   overflow: hidden;
   min-width: 26px;
@@ -1948,14 +1948,14 @@ textarea:focus {
   color: #ffffff;
 }
 .hb-menu nav > ul > li > a::after {
-	content: "";
-	position: absolute;
-	top: 8px;
-	right: 15px;
-	font-family: fontawesome;
-	font-size: 18px;
-	transition: all 0.3s ease-in-out;
-	color: #242424;
+  content: "";
+  position: absolute;
+  top: 8px;
+  right: 15px;
+  font-family: fontawesome;
+  font-size: 18px;
+  transition: all 0.3s ease-in-out;
+  color: #242424;
 }
 .hb-menu nav > ul > li:nth-child(n + 5) > a::after {
   content: none;
@@ -2184,17 +2184,17 @@ textarea:focus {
   top: 0;
 }
 .hb-menu nav ul > li > ul.hb-dropdown > li.sub-dropdown-holder::after {
-	content: "";
-	font-family: fontawesome;
-	position: absolute;
-	right: 25px;
-	top: 5px;
-	transition: all 0.3s ease-in-out;
-	color: #242424;
+  content: "";
+  font-family: fontawesome;
+  position: absolute;
+  right: 25px;
+  top: 5px;
+  transition: all 0.3s ease-in-out;
+  color: #242424;
 }
 .hb-menu nav ul > li > ul.hb-dropdown > li.sub-dropdown-holder:hover::after {
-		transform: rotate(-90deg);
-		color: #fed700;
+  transform: rotate(-90deg);
+  color: #fed700;
 }
 .hb-menu nav ul > li > ul.hb-dropdown > li.sub-dropdown-holder > ul > li > a {
   display: block;
@@ -3644,7 +3644,7 @@ li.right-menu .cat-mega-menu-2 > li {
   padding-right: 10px;
 }
 /*----------------------------------------*/
-/* 6.2 Li's Frequently Asked Question(FAQ)
+/* 6.2 Li's Frequently Asked Question(FAQs)
 /*----------------------------------------*/
 .frequently-desc {
   margin-bottom: 25px;
@@ -4794,27 +4794,26 @@ thead {
   border-color: #fed700;
 }
 .li-comment-section h3 {
-	color: #242424;
-	font-size: 18px;
-	font-weight: 600;
-	padding-bottom: 25px;
-	text-transform: uppercase;
-	margin-bottom: 0;
-	margin-left: 5%;
+  color: #242424;
+  font-size: 18px;
+  font-weight: 600;
+  padding-bottom: 25px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  margin-left: 5%;
 }
 .li-comment-section ul li {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	padding: 10px 20px;
-	margin-bottom: 30px;
-	margin-left: 5%;
-	border: 1px solid #e1e1e1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px 20px;
+  margin-bottom: 30px;
+  margin-left: 5%;
+  border: 1px solid #e1e1e1;
 }
 .li-comment-section ul li .author-avatar {
-	-ms-flex-preferred-size: 70px;
-	flex-basis: 70px;
-	
+  -ms-flex-preferred-size: 70px;
+  flex-basis: 70px;
 }
 .li-comment-section ul li .comment-body {
   -ms-flex-preferred-size: 100%;
@@ -4850,7 +4849,7 @@ thead {
   background-color: #fed700;
 }
 .li-comment-section ul li.comment-children {
-	margin-left: 10%;
+  margin-left: 10%;
 }
 .li-blog-comment-wrapper h3 {
   color: #242424;
