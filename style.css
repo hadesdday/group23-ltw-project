@@ -3428,6 +3428,7 @@ li.right-menu .cat-mega-menu-2 > li {
   font-size: 13px;
   display: block;
   line-height: 25px;
+  margin-right: -2px;
 }
 .cat-mega-menu > li > ul > li > a:hover {
   color: #fed700;
