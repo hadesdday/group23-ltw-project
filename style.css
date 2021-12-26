@@ -5929,9 +5929,14 @@ input[class="checkbox-payment"] {
 .verify-button:disabled {
   background: #d1d1d1;
 }
-.cart-image{
+.cart-image {
   width: 100px;
   height: 100px;
+}
+@media screen and (max-width: 479px) {
+  .category-menu {
+    display: none;
+  }
 }
 /*----------------------------------------------------------------------------------------------------*/
 /*------------------------------------------> The End <-----------------------------------------------*/
