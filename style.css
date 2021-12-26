@@ -472,18 +472,28 @@ textarea:focus {
 .bg-4,
 .bg-5,
 .bg-6 {
-  background-image: url(images/slider/4.jpg);
+  background-image: url(images/slider/Xmas-home-1008x405.png);
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: initial center;
   background-size: cover;
   min-height: 475px;
   width: 100%;
 }
 .bg-5 {
-  background-image: url(images/slider/5.jpg);
+  background-image: url(images/slider/Web_1008x405.png);
+  background-repeat: no-repeat;
+  background-position: initial center;
+  background-size: cover;
+  min-height: 475px;
+  width: 100%;
 }
 .bg-6 {
-  background-image: url(images/slider/6.jpg);
+  background-image: url(images/slider/Noi\ Chien_936x376_1.png);
+  background-repeat: no-repeat;
+  background-position: initial center;
+  background-size: cover;
+  min-height: 475px;
+  width: 100%;
 }
 /*Home Three | Slider Background Image*/
 .bg-7,
@@ -2861,10 +2871,11 @@ textarea:focus {
 /*  2.7 Li's Static Home Banner
 /*----------------------------------------*/
 .li-static-home-image {
-  background-image: url(images/bg-banner/1.jpg);
+  background-image: url(images/banner/bn4.png);
   background-size: cover;
   height: 400px;
   background-repeat: no-repeat;
+  background-position: center center;
 }
 .li-static-home-content {
   padding-left: 75px;
@@ -2874,14 +2885,14 @@ textarea:focus {
 }
 .li-static-home-content > p {
   margin: 0;
-  color: #242424;
+  color: #e7cfcf;
   font-size: 14px;
   margin-bottom: 20px;
   font-weight: 400;
   z-index: 99;
 }
 .li-static-home-content > p span {
-  color: #e80f0f;
+  color: #71e80f;
 }
 .li-static-home-content > h2 {
   font-weight: 400;
@@ -2890,7 +2901,7 @@ textarea:focus {
   letter-spacing: -0.025em;
 }
 .li-static-home-content > h2 {
-  color: #242424;
+  color: #ebee41;
   font-weight: 400;
   font-size: 36px;
   line-height: 30px;
@@ -2898,13 +2909,13 @@ textarea:focus {
 }
 .li-static-home-content > p.schedule {
   font-size: 14px;
-  color: #242424;
+  color: #ebee41;
   margin-top: 20px;
   margin-bottom: 53px;
 }
 .li-static-home-content > p.schedule span {
   font-size: 24px;
-  color: #e80f0f;
+  color: #e7cfcf;
   font-weight: 500;
 }
 /*----------------------------------------*/
