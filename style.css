@@ -1766,7 +1766,7 @@ textarea:focus {
   display: none;
   border: 1px solid #e5e5e5;
   padding: 20px;
-  width: 290px;
+  width: 350px;
   background: #ffffff;
   text-align: left;
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
@@ -5937,6 +5937,59 @@ input[class="checkbox-payment"] {
   .category-menu {
     display: none;
   }
+}
+.qr-code{
+  width: 50%;
+  float: left;
+}
+.momo-instrument{
+  width: 50%;
+  float: right;
+}
+.mini-cart-plus-minus {
+  float: right;
+  margin-right: 35px;
+  position: relative;
+  width: 76px;
+  text-align: left;
+}
+.mini-cart-plus-minus .mini-cart-plus-minus-box {
+  border: 1px solid #e1e1e1;
+  color: #242424;
+  height: 26px;
+  text-align: center;
+  width: 48px;
+  width: 48px;
+  width: 3rem;
+  background: #fff;
+}
+.mini-cart-plus-minus .dec.qtybutton,
+.mini-cart-plus-minus .inc.qtybutton {
+  border-bottom: 1px solid #e1e1e1;
+  border-right: 1px solid #e1e1e1;
+  border-top: 1px solid #e1e1e1;
+  color: #333333;
+  cursor: pointer;
+  height: 13px;
+  line-height: 10px;
+  position: absolute;
+  text-align: center;
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+  width: 28px;
+}
+.mini-cart-plus-minus .dec.qtybutton:hover,
+.mini-cart-plus-minus .inc.qtybutton:hover {
+  background: #ddd;
+}
+.mini-cart-plus-minus .dec.qtybutton {
+  bottom: 0;
+  right: 0;
+}
+.mini-cart-plus-minus .inc.qtybutton {
+  border-bottom: none;
+  top: 0;
+  right: 0;
 }
 /*----------------------------------------------------------------------------------------------------*/
 /*------------------------------------------> The End <-----------------------------------------------*/
