@@ -151,7 +151,7 @@ Note: responsive.css, All Responsive CSS Style For This Theme Included In This F
     z-index: 9;
   }
   .category-menu-list > ul > li i:before {
-    background-color: #606060;
+   
     width: 8px;
     height: 2px;
     content: "";
@@ -162,7 +162,7 @@ Note: responsive.css, All Responsive CSS Style For This Theme Included In This F
     top: 50%;
   }
   .category-menu-list > ul > li i:after {
-    background-color: #606060;
+   
     width: 2px;
     height: 8px;
     content: "";
@@ -341,9 +341,10 @@ Note: responsive.css, All Responsive CSS Style For This Theme Included In This F
     width: 40px;
     line-height: 40px;
     z-index: 9;
+    
   }
   .category-menu-list > ul > li i:before {
-    background-color: #606060;
+   
     width: 8px;
     height: 2px;
     content: "";
@@ -354,7 +355,7 @@ Note: responsive.css, All Responsive CSS Style For This Theme Included In This F
     top: 50%;
   }
   .category-menu-list > ul > li i:after {
-    background-color: #606060;
+    
     width: 2px;
     height: 8px;
     content: "";
@@ -558,7 +559,7 @@ Note: responsive.css, All Responsive CSS Style For This Theme Included In This F
     z-index: 9;
   }
   .category-menu-list > ul > li i:before {
-    background-color: #606060;
+    
     width: 8px;
     height: 2px;
     content: "";
@@ -569,7 +570,7 @@ Note: responsive.css, All Responsive CSS Style For This Theme Included In This F
     top: 50%;
   }
   .category-menu-list > ul > li i:after {
-    background-color: #606060;
+    
     width: 2px;
     height: 8px;
     content: "";
@@ -852,7 +853,7 @@ Note: responsive.css, All Responsive CSS Style For This Theme Included In This F
     z-index: 9;
   }
   .category-menu-list > ul > li i:before {
-    background-color: #606060;
+   
     width: 8px;
     height: 2px;
     content: "";
@@ -863,7 +864,7 @@ Note: responsive.css, All Responsive CSS Style For This Theme Included In This F
     top: 50%;
   }
   .category-menu-list > ul > li i:after {
-    background-color: #606060;
+    
     width: 2px;
     height: 8px;
     content: "";
