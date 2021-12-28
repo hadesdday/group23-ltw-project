@@ -478,6 +478,7 @@ textarea:focus {
   background-size: cover;
   min-height: 475px;
   width: 100%;
+  scale: inherit;
 }
 .bg-5 {
   background-image: url(images/slider/Web_1008x405.png);
