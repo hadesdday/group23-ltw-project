@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Đăng Nhập || NLU</title>
+    <title>Nhận xét của tôi || NLU</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
@@ -41,6 +41,10 @@
     <link rel="stylesheet" href="style.css">
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="css/responsive.css">
+
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/v/dt/dt-1.11.3/r-2.2.9/sc-2.0.5/datatables.min.css" />
     <!-- Modernizr js -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
@@ -331,59 +335,61 @@
                 <div class="breadcrumb-content">
                     <ul>
                         <li><a href="index.html">Trang chủ</a></li>
-                        <li class="active">Đăng nhập</li>
+                        <li class="active">Nhận xét của tôi</li>
                     </ul>
+                </div>
+            </div>
+            <div class="row ml-90 sidebar-content ">
+                <!-- sidebar here -->
+                <div class="col-sm-12 col-md-12 col-xs-3 col-lg-3">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <button class="navbar-toggler b-none" type="button" data-toggle="collapse"
+                            data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                            <ul>
+                                <li class="mt-3 sidebar-item  "><a href="my-account.html" class="fs-110"><i
+                                            class="fa fa-user mr-3 fs-150"></i>
+                                        Thông tin tài
+                                        khoản</a>
+                                </li>
+                                <li class="mt-3 sidebar-item"><a href="my-order.html" class="fs-110"><i
+                                            class="fa fa-book mr-3 fs-150"></i>
+                                        Quản lý đơn hàng</a>
+                                </li>
+                                <li class="mt-3 sidebar-item"><a href="my-review.html" class="fs-110"><i
+                                            class="fa fa-star mr-3 fs-150"></i>
+                                        Nhận xét của bạn</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div class="col-sm-12 col-md-12 col-xs-3 col-lg-8 bg-white">
+                    <p class=" p-title mt-3">Nhận xét của tôi</p>
+                    <table id="review-table" class="display text-center" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Mã sản phẩm</th>
+                                <th>Rating</th>
+                                <th>Nội dung</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>KN12345</td>
+                                <td>5</td>
+                                <td>Good af</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
         <!-- Li's Breadcrumb Area End Here -->
         <!-- Begin Login Content Area -->
-        <div class="page-section mb-60 mt-30">
-            <div class="container">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6 mb-30">
-                        <!-- Login Form s-->
-                        <form action="#" class="needs-validation" novalidate>
-                            <div class="login-form">
-                                <h4 class="login-title text-center">Đăng Nhập</h4>
-                                <div class="row">
-                                    <div class="col-md-12 col-12 mb-20">
-                                        <label>Username *</label>
-                                        <input class="mb-0 rounded" type="text" placeholder="Username" id="username">
-                                        <label for="error" class="error__label">Vui lòng nhập đúng email</label>
-                                    </div>
-                                    <div class="col-12 mb-20">
-                                        <label>Mật khẩu</label>
-                                        <input class="mb-0 rounded" type="password" placeholder="Mật khẩu"
-                                            id="password">
-                                        <label for="error" class="error__label">Tối thiểu 8 ký tự bao gồm ít nhất một
-                                            chữ in hoa , một ký tự đặc biệt và một số
-                                        </label>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="check-box d-inline-block ml-0 ml-md-2 mt-10">
-                                            <input type="checkbox" id="remember_me">
-                                            <label for="remember_me">Lưu đăng nhập</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mt-10 mb-20 text-left text-md-right">
-                                        <a href="forgot-password.html">Quên mật khẩu</a>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <button class="login-button mt-0">Đăng nhập</button>
-                                    </div>
-                                    <div class="col-md-12 mt-20">
-                                        <label for="register">Chưa có tài khoản?
-                                            <a href="register.html">Đăng ký ngay</a>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- Login Content Area End Here -->
         <!-- Begin Footer Area -->
         <div class="footer">
@@ -428,7 +434,8 @@
                                     </div>
                                     <div class="shipping-text">
                                         <h2>Mua hàng với trải nghiệm tốt nhất</h2>
-                                        <p>Chúng tôi đảm bảo an toàn tuyệt đối cho quý khách từ khâu mua hàng cho đến
+                                        <p>Chúng tôi đảm bảo an toàn tuyệt đối cho quý khách từ khâu mua hàng cho
+                                            đến
                                             khâu vận chuyển.</p>
                                     </div>
                                 </div>
@@ -641,6 +648,8 @@
     <script src="js/scrollUp.min.js"></script>
     <!-- Main/Activator js -->
     <script src="js/main.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.datatables.net/v/dt/dt-1.11.3/r-2.2.9/sc-2.0.5/datatables.min.js"></script>
 </body>
 
 </html>

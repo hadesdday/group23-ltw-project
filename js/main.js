@@ -570,4 +570,13 @@ Note: main.js, All Default Scripting Languages For This Theme Included In This F
   /* 26. WOW
 /*----------------------------------------*/
   new WOW().init();
+
+  $(document).ready(function () {
+    $("#order-table").DataTable({
+      order: [[0, "asc"]],
+    });
+    $("#review-table").DataTable({
+      order: [[0, "asc"]],
+    });
+  });
 })(jQuery);

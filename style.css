@@ -5958,11 +5958,11 @@ input[class="checkbox-payment"] {
     display: block;
   }
 }
-.qr-code{
+.qr-code {
   width: 50%;
   float: left;
 }
-.momo-instrument{
+.momo-instrument {
   width: 50%;
   float: right;
 }
@@ -6010,4 +6010,30 @@ input[class="checkbox-payment"] {
   border-bottom: none;
   top: 0;
   right: 0;
+}
+.fs-150 {
+  font-size: 150%;
+}
+.fs-110 {
+  font-size: 110%;
+}
+.submit-button {
+  display: block;
+  margin-top: 40px;
+  width: 140px;
+  border-radius: 0;
+  height: 36px;
+  border: none;
+  line-height: 24px;
+  padding: 6px 20px;
+  float: left;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: #363f4d;
+  border-radius: 3px;
+  transition: all 0.032s ease-in-out;
+}
+.submit-button:hover {
+  background: #fed700;
 }
